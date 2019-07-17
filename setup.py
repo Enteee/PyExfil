@@ -15,7 +15,12 @@ except ImportError:
 
 required = ['requests>=1.0.0', 'impacket>=0.9.0', 'slackclient', 'progressbar', 'numpy', 'PIL', 'pytube', 'hashlib',
             'urllib2', 'PyCrypto', 'ftplib', 'base58']
+			
 			# note: attempting to install "zlib" breaks "pip install", as zlib is not a pip, but a system package
+			# proof: https://stackoverflow.com/a/6169902
+			
+			
+			
             # Todo: Set that urllib2 is not installed from pip for Python3
 
 
@@ -34,7 +39,6 @@ if __name__ == '__main__':
         version="1.0 RC1",
         download_url='https://www.github.com/ytisf/pyexfil',
         long_description=long_desc,
-        packages=['pyexfil'],
         install_requires=required,
         platforms='any',
         classifiers=(
