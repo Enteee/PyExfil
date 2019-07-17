@@ -13,11 +13,11 @@ except ImportError:
     from distutils.core import setup
 
 
-required = ['requests>=1.0.0', 'impacket>=0.9.0', 'slackclient', 'progressbar', 'numpy', 'Pillow', 'pytube', 'hashlib',
-            'urllib2', 'PyCrypto', 'ftplib', 'base58']
+required = ['requests>=1.0.0', 'impacket>=0.9.0', 'slackclient', 'progressbar', 'numpy', 'Pillow', 'pytube', 'PyCrypto', 'base58']
 			
 			# note: attempting to install "zlib" breaks "pip install", as zlib is not a pip, but a system package
 			# proof: https://stackoverflow.com/a/6169902
+			# Update: Turns out the same story for: "urllib2", "ftplib" and "hashlib". All are pre-installed with python, and installing them with pip after breaks "pip install PyExfil" flow
 			
 			# note: PIL is (sadly) dead, and as part of it, there is no weay to install PIL onto Ubuntu
 			# but the workaround is simple! Just replace "PIL" with "Pillow"
