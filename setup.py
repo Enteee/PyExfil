@@ -8,12 +8,25 @@ __copyright__ = '2018, Yuval tisf Nativ'
 import os
 
 try:
-    from setuptools import setup
+    from setuptools import setup, find_packages
 except ImportError:
-    from distutils.core import setup
+    from distutils.core import setup, find_packages
 
 
-required = ['requests>=1.0.0', 'impacket>=0.9.0', 'slackclient', 'progressbar', 'numpy', 'Pillow', 'pytube', 'PyCrypto', 'base58']
+required = [
+    'requests>=1.0.0',
+    'impacket>=0.9.0',
+    'slackclient',
+    'progressbar',
+    'numpy',
+    'Pillow',
+    'pytube',
+    'PyCrypto',
+    'base58',
+    'luhn',
+    'names',
+    'faker',
+]
 			
 			# note: attempting to install "zlib" breaks "pip install", as zlib is not a pip, but a system package
 			# proof: https://stackoverflow.com/a/6169902
@@ -44,6 +57,7 @@ if __name__ == '__main__':
         long_description=long_desc,
         install_requires=required,
         platforms='any',
+        packages=find_packages(),
         classifiers=(
                 'Development Status :: 3 - Beta',
                 'Intended Audience :: Developers',
